@@ -34,6 +34,12 @@ ANTS 3 -m CC[${FA_STAT},${FA_MOVE},1,5] -t SyN[0.5] \
 # Renaming files
 #------------------------------------------------------------------------------
 
+cp ${T1W_ANT_PRE}Warp.nii.gz var-t1w_warp.nii.gz
+cp ${T1W_ANT_PRE}InverseWarp.nii.gz var-t1w_inverse-warp.nii.gz
+
+cp ${FA_ANT_PRE}Warp.nii.gz var-fa_warp.nii.gz
+cp ${FA_ANT_PRE}InverseWarp.nii.gz var-fa_inverse-warp.nii.gz
+
 mv ${T1W_ANT_PRE}Warp.nii.gz ${T1W_ANT_PRE}warp.nii.gz
 mv ${T1W_ANT_PRE}InverseWarp.nii.gz ${T1W_ANT_PRE}invwarp.nii.gz
 mv ${T1W_ANT_PRE}Affine.txt ${T1W_ANT_PRE}affine.txt
@@ -42,8 +48,4 @@ mv ${FA_ANT_PRE}Warp.nii.gz ${FA_ANT_PRE}warp.nii.gz
 mv ${FA_ANT_PRE}InverseWarp.nii.gz ${FA_ANT_PRE}invwarp.nii.gz
 mv ${FA_ANT_PRE}Affine.txt ${FA_ANT_PRE}affine.txt
 
-cp ${T1W_ANT_PRE}Warp.nii.gz var-t1w_warp.nii.gz
-cp ${T1W_ANT_PRE}InverseWarp.nii.gz var-t1w_inverse-warp.nii.gz
 
-cp ${FA_ANT_PRE}Warp.nii.gz var-fa_warp.nii.gz
-cp ${FA_ANT_PRE}InverseWarp.nii.gz var-fa_inverse-warp.nii.gz
