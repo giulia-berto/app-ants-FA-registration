@@ -43,4 +43,7 @@ mv ${FA_ANT_PRE}InverseWarp.nii.gz ${FA_ANT_PRE}invwarp.nii.gz
 mv ${FA_ANT_PRE}Affine.txt ${FA_ANT_PRE}affine.txt
 
 cp ${T1W_ANT_PRE}Warp.nii.gz var-t1w_warp.nii.gz
+cp ${T1W_ANT_PRE}InverseWarp.nii.gz var-t1w_inverse-warp.nii.gz
+
 cp ${FA_ANT_PRE}Warp.nii.gz var-fa_warp.nii.gz
+cp ${FA_ANT_PRE}InverseWarp.nii.gz var-fa_inverse-warp.nii.gz
