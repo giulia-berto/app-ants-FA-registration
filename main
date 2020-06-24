@@ -4,10 +4,10 @@
 
 
 ## modules
-echo "Loading modules"
-module load ants
-module load nodejs
-echo "Finished loading modules"
+#echo "Loading modules"
+#module load ants
+#module load nodejs
+#echo "Finished loading modules"
 
 
 # Check the inputs subject id
@@ -26,7 +26,7 @@ fi
 
 # ANTs transformation
 echo "ANTs transformation"
-./voxel_based_transformation.sh ${t1_sub1_id} ${t1_sub2_id} 
+time singularity exec docker://brainlife/ants:2.2.0 ImageMath -h ./voxel_based_transformation.sh ${t1_sub1_id} ${t1_sub2_id} 
 
 ret=$?
 if [ ! $ret -eq 0 ]; then
