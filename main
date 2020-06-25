@@ -1,19 +1,15 @@
 #!/bin/bash
 #PBS -k o
-#PBS -l nodes=1:ppn=4,walltime=2:00:00
-
-
-## modules
-#echo "Loading modules"
-#module load ants
-#module load nodejs
-#echo "Finished loading modules"
+#PBS -l nodes=1:ppn=4,walltime=00:45:00
 
 FA_MOVE=`jq -r '.fa_moving' config.json`
+MD_MOVE=`jq -r '.md_moving' config.json`
+RD_MOVE=`jq -r '.rd_moving' config.json`
+AD_MOVE=`jq -r '.ad_moving' config.json`
 
 # ANTs transformation
 echo "ANTs transformation"
-singularity exec -e docker://brainlife/ants:2.2.0 ./voxel_based_transformation.sh ${FA_MOVE} 
+singularity exec -e docker://brainlife/ants:2.2.0 ./ants_fa_registration.sh ${FA_MOVE} ${MD_MOVE} ${RD_MOVE} ${AD_MOVE}
 
 ret=$?
 if [ ! $ret -eq 0 ]; then
