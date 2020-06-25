@@ -24,7 +24,7 @@ cp 1InverseWarp.nii.gz warp/inverse-warp.nii.gz
 
 echo "Applying the warp..."
 mkdir tensor_aligned
-${OUT}=tensor_aligned
+OUT=tensor_aligned
 
 WarpImageMultiTransform 3  \
 	${FA_MOVE} \
