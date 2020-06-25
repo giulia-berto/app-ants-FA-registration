@@ -10,11 +10,10 @@
 #echo "Finished loading modules"
 
 FA_MOVE=`jq -r '.fa_moving' config.json`
-FA_STAT=`jq -r '.fa_static' config.json`
 
 # ANTs transformation
 echo "ANTs transformation"
-singularity exec -e docker://brainlife/ants:2.2.0 ./voxel_based_transformation.sh ${FA_MOVE} ${FA_STAT} 
+singularity exec -e docker://brainlife/ants:2.2.0 ./voxel_based_transformation.sh ${FA_MOVE} 
 
 ret=$?
 if [ ! $ret -eq 0 ]; then
