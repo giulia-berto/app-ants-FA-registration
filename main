@@ -18,4 +18,4 @@ if [ ! $ret -eq 0 ]; then
 	exit $ret
 fi
 
-echo "Complete"
+echo "Completed."
