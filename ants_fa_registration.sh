@@ -45,3 +45,17 @@ WarpImageMultiTransform 3  \
 	${AD_MOVE} \
 	${OUT}/ad.nii.gz \
 	1Warp.nii.gz 1Affine.txt
+
+#------------------------------------------------------------------------------
+# Checks
+#------------------------------------------------------------------------------
+
+if [ -z "$(ls -A -- "warp")" ]; then    
+	echo "Transformation failed."
+	exit 1
+elif [ -z "$(ls -A -- "tensor_aligned")" ]; then    
+	echo "Registration failed."
+	exit 1
+else    
+	echo "Transformation and registration done."
+fi
