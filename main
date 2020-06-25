@@ -9,24 +9,12 @@
 #module load nodejs
 #echo "Finished loading modules"
 
-
-# Check the inputs subject id
-echo "Check the inputs subject id"
-t1_sub1_id=`jq -r '._inputs[0].meta.subject' config.json`
-fa_sub1_id=`jq -r '._inputs[1].meta.subject' config.json`
-t1_sub2_id=`jq -r '._inputs[2].meta.subject' config.json`
-fa_sub2_id=`jq -r '._inputs[3].meta.subject' config.json`
-if [ $fa_sub1_id == $t1_sub1_id -a $fa_sub2_id == $t1_sub2_id ]; then
-	echo "Inputs subject IDs correctly inserted"
-else
-	echo "Inputs subject IDs incorrectly inserted. Check them again."
-	exit 1
-fi
-
+FA_MOVE=`jq -r '.fa_moving' config.json`
+FA_STAT=`jq -r '.fa_static' config.json`
 
 # ANTs transformation
 echo "ANTs transformation"
-time singularity exec docker://brainlife/ants:2.2.0 ImageMath -h ./voxel_based_transformation.sh ${t1_sub1_id} ${t1_sub2_id} 
+singularity exec -e docker://brainlife/ants:2.2.0 ./voxel_based_transformation.sh ${FA_MOVE} ${FA_STAT} 
 
 ret=$?
 if [ ! $ret -eq 0 ]; then
