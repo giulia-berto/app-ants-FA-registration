@@ -24,7 +24,7 @@ Avants, B.B., Epstein, C.L., Grossman, M., Gee, J.C., 2008. [Symmetric diffeomor
 You can submit this App online at https://doi.org/10.25663/brainlife.app.118 via the “Execute” tab.
 
 Input: \
-Diffusion Tensor Image Scalars (tensor datatype). Up to now, supported scalars are: FA (FRactional Anisotropy), MD (Mean Diffusivity), RD (Radial Diffusivity), and AD (Axial Diffusivity).
+Diffusion Tensor Image Scalars (tensor datatype). Up to now, supported scalars are: FA (Fractional Anisotropy), MD (Mean Diffusivity), RD (Radial Diffusivity), and AD (Axial Diffusivity).
 
 Output: \
 Diffusion Tensor Image Scalars (tensor datatype) in MNI space.
@@ -50,4 +50,3 @@ This App only requires [singularity](https://sylabs.io/singularity/) to run. If 
 * ANTs >=2: https://github.com/ANTsX/ANTs
 
 #### MIT Copyright (c) 2020 Bruno Kessler Foundation (FBK)
-
