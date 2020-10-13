@@ -52,10 +52,10 @@ Diffusion Tensor Image Scalars (tensor datatype) registered in MNI space.
 ./main
 ```
 
-## Output
+### Output
 Diffusion Tensor Image Scalars (tensor datatype) registered in MNI space.
 
-#### Dependencies
+### Dependencies
 This App only requires [singularity](https://sylabs.io/singularity/) to run. If you don't have singularity, you will need to install following dependencies:
 * ANTs >=2: https://github.com/ANTsX/ANTs
 
