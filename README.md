@@ -53,7 +53,7 @@ Diffusion Tensor Image Scalars (tensor datatype) registered in MNI space.
 ```
 
 ### Output
-Diffusion Tensor Image Scalars (tensor datatype) registered in MNI space.
+The main output of this App is the Diffusion Tensor Image Scalars (tensor datatype) registered in MNI space. A secondary output is the warp (and inverse-warp) computed to perform the registration.
 
 ### Dependencies
 This App only requires [singularity](https://sylabs.io/singularity/) to run. If you don't have singularity, you will need to install following dependencies:
