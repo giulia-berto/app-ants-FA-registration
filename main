@@ -6,10 +6,17 @@ FA_MOVE=`jq -r '.fa_moving' config.json`
 MD_MOVE=`jq -r '.md_moving' config.json`
 RD_MOVE=`jq -r '.rd_moving' config.json`
 AD_MOVE=`jq -r '.ad_moving' config.json`
+fa_template=`jq -r '.fa_template' config.json`
+
+if [ $fa_template == 'FMRIB58_FA_1mm' ]; then 
+	template=FMRIB58_FA_1mm.nii.gz
+elif [ $fa_template == 'IITmean_FA' ]; then 
+	template=IITmean_FA.nii.gz
+fi 
 
 # ANTs transformation
 echo "ANTs transformation"
-singularity exec -e docker://brainlife/ants:2.2.0 ./ants_fa_registration.sh ${FA_MOVE} ${MD_MOVE} ${RD_MOVE} ${AD_MOVE}
+singularity exec -e docker://brainlife/ants:2.2.0 ./ants_fa_registration.sh ${FA_MOVE} ${MD_MOVE} ${RD_MOVE} ${AD_MOVE} ${template}
 
 ret=$?
 if [ ! $ret -eq 0 ]; then

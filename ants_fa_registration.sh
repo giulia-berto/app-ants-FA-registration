@@ -4,7 +4,7 @@ FA_MOVE=$1
 MD_MOVE=$2
 RD_MOVE=$3
 AD_MOVE=$4
-template=FMRIB58_FA_1mm.nii.gz
+template=$5
 
 #------------------------------------------------------------------------------
 # ANTS Transformation of structural images based on FA
