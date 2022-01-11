@@ -2,7 +2,7 @@
 [![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.118-blue.svg)](https://doi.org/10.25663/brainlife.app.118)
 
 # app-ants-FA-registration
-This App computes a non-linear registration of Diffusion Tensor Image Scalars in MNI space using the Advanced Normalization Tools (ANTs) algorithm. First, a non-linear warp is computed to register the Fractional Anisotropy (FA) image to the template image, which is the FMRIB58_FA_1mm.nii.gz. Then, the same transformation is applied to all Diffusion Tensor Image Scalars.
+This App computes a non-linear registration of Diffusion Tensor Image Scalars in MNI space using the Advanced Normalization Tools (ANTs) algorithm. First, a non-linear warp is computed to register the Fractional Anisotropy (FA) image to the template image, which is the FMRIB58_FA_1mm.nii.gz or the IITmean_FA.nii.gz. Then, the same transformation is applied to all Diffusion Tensor Image Scalars.
 
 ### Authors
 - Giulia Bertò (giulia.berto.4@gmail.com)
